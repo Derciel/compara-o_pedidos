@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 # Título da aplicação
-st.title("Sistema de De-Para de Pedidos")
+st.title("Comparação de Pedido DGA GRAFICS COM PP1")
 
 # Função para normalizar nomes de colunas (ignorar maiúsculas/minúsculas e espaços)
 def normalizar_nome_coluna(colunas):
