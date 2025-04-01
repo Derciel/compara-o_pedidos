@@ -2,7 +2,13 @@ import streamlit as st
 import pandas as pd
 
 # Título da aplicação
-st.title("Comparação de Pedido DGA GRAFICS COM PP1")
+st.title("Comparação de Pedido DGA COM PP1")
+
+# Carregar arquivo Excel no Streamlit
+uploaded_file = st.file_uploader("Carregue seu Excel", type="xlsx")
+if uploaded_file:
+    df = pd.read_excel(uploaded_file, engine='openpyxl')  # Especifique o engine!
+    st.write(df)
 
 # Função para normalizar nomes de colunas (ignorar maiúsculas/minúsculas e espaços)
 def normalizar_nome_coluna(colunas):
@@ -99,10 +105,10 @@ st.subheader("Upload das Planilhas")
 col1, col2 = st.columns(2)
 
 with col1:
-    arquivo1 = st.file_uploader("Planilha Sistema 1", type=['xlsx'])
+    arquivo1 = st.file_uploader("DGA", type=['xlsx'])
     
 with col2:
-    arquivo2 = st.file_uploader("Planilha Sistema 2", type=['xlsx'])
+    arquivo2 = st.file_uploader("PP1", type=['xlsx'])
 
 # Variáveis para armazenar resultados
 resultado_df = None
