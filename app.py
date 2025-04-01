@@ -4,12 +4,6 @@ import pandas as pd
 # Título da aplicação
 st.title("Comparação de Pedido DGA COM PP1")
 
-# Carregar arquivo Excel no Streamlit
-uploaded_file = st.file_uploader("Carregue seu Excel", type="xlsx")
-if uploaded_file:
-    df = pd.read_excel(uploaded_file, engine='openpyxl')  # Especifique o engine!
-    st.write(df)
-
 # Função para normalizar nomes de colunas (ignorar maiúsculas/minúsculas e espaços)
 def normalizar_nome_coluna(colunas):
     return [col.strip().lower() for col in colunas]
